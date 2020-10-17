@@ -57,7 +57,7 @@
 
                 $.ajax({
                     type: "POST", // POST 방식으로 요청하겠다.
-                    url: "/order", // /memo라는 url에 요청하겠다.
+                    url: "/order", // /order라는 url에 요청하겠다.
                     data: {name_give: name, count_give: count, address_give: address, phone_give: phone},  // 데이터를 주는 방법
                     success: function (response) { // 성공하면
                         if (response["result"] == "success") {
@@ -84,7 +84,7 @@
                     success: function(response){
                        let orders = response["orders"];
                        for (let i = 0; i < orders.length; i++) {
-                         makeOrderRow(orders[i]["name"], orders[i]["count"], orders[i]["address"], orders[i]["phone"])
+                         makeOrderRow(orders[i]["name"], orders[i]["count"], orders[i]["address"], orders[i]["phone"]) // makeOrderRow 함수 사용
                        }
                     }
                   })
